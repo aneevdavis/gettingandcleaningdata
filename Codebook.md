@@ -1,13 +1,13 @@
 # Codebook for: Getting and Cleaning Data Course Project
 
-## Variables
+### Variables
 
 The variables correspond to measurements taken using the accelerometer and gyroscope of a smartphone, mapped to subjects (numbered 1 to 30, volunteers) and activities (WALKING, WALKING\_UPSTAIRS, WALKING\_DOWNSTAIRS, SITTING, STANDING, LAYING).
 
 There are 561 variables derived from the raw signals, out of which we're interested in only the ones corresponding to mean and standard deviation (i.e. those that have either 'mean()' or 'std()' in the original variable name).
 
 
-## Input data
+### Input data
 
 * activity\_labels.txt: Mapping between activity names and numbers (Eg: 1 = WALKING)
 * features\_info.txt: Key information and long-form descriptions of the variables
@@ -20,7 +20,7 @@ There are 561 variables derived from the raw signals, out of which we're interes
 * test/subject\_test.txt: Corresponding subject numbers for each of the 2947 observations
 
 
-## Transformations performed
+### Transformations performed
 
 1. From the file 'features.txt', extract the lines and split using spaces to obtain the feature (variable) names and corresponding indices.
 
@@ -31,24 +31,17 @@ There are 561 variables derived from the raw signals, out of which we're interes
 4. From the file 'activity\_labels.txt', extract the lines and split using spaces to obtain the activity names and corresponding indices.
 
 5. Do the following for each of test and training:
-
-..a. From the file X\_<type>.txt / X\_<type>.txt:
-....1. Extract the lines
-....2. Trim the leading whitespace
-....3. Split each line by spaces to obtain the list of features for each observation
-....4. Convert each such list into numeric values
-
-..b. Convert the list obtained above into a dataframe, and then a tibble (see dplyr library)
-
-..c. Select only the columns corresponding to requiredIndices.
-
-..d. Read the lines of subject\_<type>.txt file into a numeric vector
-
-..e. Read the lines of y\_<type>.txt file into a numeric vector and obtain the mapped activity names
-
-..f. Set the column names of the dataset to those extracted in Step 1
-
-..g. Add type ('train' or 'test'), activity and subject as columns in the data set.
+	1. From the file X\_<type>.txt / X\_<type>.txt:
+    	1. Extract the lines
+    	2. Trim the leading whitespace
+    	3. Split each line by spaces to obtain the list of features for each observation
+    	4. Convert each such list into numeric values
+    2. Convert the list obtained above into a dataframe, and then a tibble (see dplyr library)
+    3. Select only the columns corresponding to requiredIndices.
+    4. Read the lines of subject\_<type>.txt file into a numeric vector
+    5. Read the lines of y\_<type>.txt file into a numeric vector and obtain the mapped activity names
+    6. Set the column names of the dataset to those extracted in Step 1
+    7. Add type ('train' or 'test'), activity and subject as columns in the data set.
 
 6. Combine the 'train' and 'test' datasets to obtain a single dataset using rbind.
 
@@ -57,7 +50,7 @@ There are 561 variables derived from the raw signals, out of which we're interes
 8. Summarize the data using mean() to get the average of every variable.
 
 
-## Output
+### Output
 
 * tidy\_set.csv: The tidy data set with 66 variables corresponding to mean and standard deviation, and three additional ones: type ('train' or 'test'), subject, and activity.
 
