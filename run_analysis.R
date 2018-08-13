@@ -61,7 +61,7 @@ runAnalysis <- function(dirName) {
     
   # Combines the test and train sets into a single set and write it out
   tidySet <- rbind(datasets[['train']], datasets[['test']])
-  write.csv(tidySet, file='tidy_set.csv')
+  write.table(tidySet, file='tidy_set.txt', row.names = FALSE)
   
   # Get the averages and write out averages.csv
   writeAverages(tidySet)
@@ -101,5 +101,5 @@ writeAverages <- function(data) {
         return(paste('Avg_', x, sep=''))
     })
   
-  write.csv(avgData, file='averages.csv')
+  write.table(avgData, file='averages.txt', row.names = FALSE)
 }
