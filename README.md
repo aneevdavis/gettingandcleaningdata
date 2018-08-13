@@ -19,8 +19,10 @@ This is my course project submission for the 'Getting and Cleaning Data' course 
 * In R, set the working directory to the current directory
 * Run the following:
 
-source('run_analysis.R')
-runAnalysis('<dirName>')
+> source('run_analysis.R')
+
+> runAnalysis('\<dirName\>')
+
 (Replace \<dirName\> with the name of the actual folder your data is in. For example, if you renamed 'UCI HAR Dataset' to 'dataset', type runAnalysis('dataset'))
 
 * The files 'tidy\_set.csv' and 'averages.csv' will be created.
